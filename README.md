@@ -22,6 +22,7 @@
 <div id="top" align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv-2605.17327-red)](https://arxiv.org/abs/2605.17327)
+[![Video](https://img.shields.io/badge/Video-%E2%96%B6-red?logo=youtube&logoColor=red)](https://www.youtube.com/watch?v=uxTh21D8log)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Built on OpenVINS](https://img.shields.io/badge/Built%20on-OpenVINS-orange.svg)](https://github.com/rpng/open_vins)
 
@@ -50,11 +51,11 @@ particularly in visually degraded environments where existing methods often fail
 
 ## Supplementary Video
 
-<!-- TODO: replace with YouTube link, e.g.
-[![Supplementary Video](docs/overview.png)](https://youtu.be/VIDEO_ID)
--->
-
-> 🎬 Supplementary video coming soon — a YouTube link will be added here.
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=uxTh21D8log">
+    <img src="https://img.youtube.com/vi/uxTh21D8log/maxresdefault.jpg" alt="Supplementary Video" width="80%">
+  </a>
+</p>
 
 ## Repository Status
 
