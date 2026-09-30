@@ -1,0 +1,86 @@
+Panels:
+  - Class: rviz/Displays
+    Name: Displays
+  - Class: rviz/Views
+    Name: Views
+  - Class: rviz/Time
+    Name: Time
+Visualization Manager:
+  Class: ""
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: global
+  Name: root
+  Robots:
+    {}
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 10
+      Enable Stereo Rendering: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      FOV: 0.785398
+      Name: Orbit View
+      Near Clip Distance: 0.01
+      Pitch: 0.785398
+      Target Frame: global
+      Yaw: 0
+  Displays:
+    - Alpha: 1
+      Class: rviz/Image
+      Enabled: true
+      Image Topic: /ros1_serial_msckf/camera_raw/cam0
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Cam0 Raw
+      Normalize Range: false
+      Queue Size: 2
+      Show Image Time: true
+      Transport Hint: raw
+      Unreliable: false
+    - Alpha: 1
+      Class: rviz/Image
+      Enabled: false
+      Image Topic: /ros1_serial_msckf/camera_raw/cam1
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Cam1 Raw
+      Normalize Range: false
+      Queue Size: 2
+      Show Image Time: true
+      Transport Hint: raw
+      Unreliable: false
+    - Alpha: 1
+      Class: rviz/Image
+      Enabled: true
+      Image Topic: /ros1_serial_msckf/trackhist
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Track Hist
+      Normalize Range: false
+      Queue Size: 2
+      Show Image Time: true
+      Transport Hint: raw
+      Unreliable: false
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 800
+  Hide Left Dock: false
+  Hide Right Dock: true
+  Left Dock Width: 320
+  QMainWindow State: 000000ff00000000fd0000000100000000000001b9000002c7fc0200000005fb000000120056006900650077007300200054006f006f0000000028000001b900000000fb0000000a0049006d0061006700650000000000000000fb0000000a0049006d00610067006500000000000000000000001b000002c700000000fc00000002000000020000000100000002fc0000000000000001
+  Width: 1200
+  X: 100
+  Y: 100

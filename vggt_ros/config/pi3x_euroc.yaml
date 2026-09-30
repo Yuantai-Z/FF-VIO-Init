@@ -1,0 +1,14 @@
+# Copyright (C) 2025-2026 Yuantai-Z
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Processed cam0 geometry produced by config/euroc_mav/estimator_config.yaml
+# with vggt_target_size: 518.
+camera_profile_name: euroc_518x280
+processed_image_size:
+  width: 518
+  height: 280
+camera_intrinsics:
+  fx: 257.221205544979
+  fy: 255.511586380005
+  cx: 259.0
+  cy: 140.0

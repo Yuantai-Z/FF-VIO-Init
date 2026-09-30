@@ -1,0 +1,14 @@
+# Copyright (C) 2025-2026 Yuantai-Z
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Processed cam0 geometry produced by config/tum_vi/estimator_config.yaml with
+# the 1024x1024 calibration and vggt_target_size: 518.
+camera_profile_name: tumvi_1024_518x392
+processed_image_size:
+  width: 518
+  height: 392
+camera_intrinsics:
+  fx: 309.816217031999
+  fy: 309.817448030133
+  cx: 259.0
+  cy: 196.0

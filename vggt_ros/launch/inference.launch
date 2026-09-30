@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2025-2026 Yuantai-Z -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<launch>
+  <arg name="model" default="vggt" doc="vggt or pi3x; pi3 is a compatibility alias" />
+  <arg name="canonical_model" value="$(eval 'pi3x' if arg('model').lower() == 'pi3' else arg('model').lower())" />
+  <arg name="config_file" default="$(find vggt_ros)/config/$(arg canonical_model).yaml" />
+  <arg name="camera_profile_file" default="" />
+
+  <!-- Activate the desired model environment before roslaunch, set
+       VGGT_ROS_PYTHON, or pass an absolute interpreter here. -->
+  <arg name="python_executable" default="$(optenv VGGT_ROS_PYTHON python3)" />
+  <arg name="camera_topic" default="" />
+  <arg name="model_name" default="" />
+  <arg name="model_source_path" default="" />
+  <arg name="model_revision" default="" />
+  <arg name="confidence_activation" default="" />
+
+  <node pkg="vggt_ros" type="inference_node.py" name="vggt_inference" output="screen"
+        required="true" clear_params="true" launch-prefix="$(arg python_executable)">
+    <rosparam command="load" file="$(arg config_file)" />
+    <rosparam if="$(eval arg('camera_profile_file') != '')" command="load" file="$(arg camera_profile_file)" />
+    <param name="model_type" value="$(arg canonical_model)" />
+    <param if="$(eval arg('camera_topic') != '')" name="camera_topic" value="$(arg camera_topic)" />
+    <param if="$(eval arg('model_name') != '')" name="model_name" value="$(arg model_name)" />
+    <param if="$(eval arg('model_source_path') != '')" name="model_source_path" value="$(arg model_source_path)" />
+    <param if="$(eval arg('model_revision') != '')" name="model_revision" value="$(arg model_revision)" />
+    <param if="$(eval arg('confidence_activation') != '')" name="confidence_activation" value="$(arg confidence_activation)" />
+  </node>
+</launch>

@@ -1,0 +1,22 @@
+# Copyright (C) 2025-2026 Yuantai-Z
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+model_type: vggt
+model_name: facebook/VGGT-1B
+# Immutable Hugging Face weights revision used by the released experiments.
+model_revision: 860abec7937da0a4c03c41d3c269c366e82abdf9
+# Optional external source root containing vggt/. VGGT_SOURCE_PATH is also accepted.
+model_source_path: ""
+device: cuda
+amp_dtype: auto
+
+# Processed OpenVINS cam0 input; request/pointcloud are the fixed protocol topics.
+camera_topic: /ov_msckf/camera_raw/cam0
+request_topic: /vggtinitializer/request_timestamps
+pointcloud_topic: /vggtinitializer/pointcloud
+
+buffer_size: 500
+timestamp_tolerance: 0.000001
+request_wait_timeout: 5.0 # waits for requested images; model wait is configured in the estimator YAML
+subscriber_queue_size: 1000
+publisher_queue_size: 20

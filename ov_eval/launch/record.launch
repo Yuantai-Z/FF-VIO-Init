@@ -1,0 +1,21 @@
+<launch>
+
+
+    <!-- Input bag is required; output defaults to a temporary TUM-style file. -->
+    <arg name="bag" />
+    <arg name="output" default="/tmp/trajectory.txt" />
+
+
+    <!-- record the trajectory -->
+    <node name="recorder_estimate" pkg="ov_eval" type="pose_to_file" output="screen" required="true">
+        <param name="topic"      type="str" value="/groundtruth/pose" />
+        <param name="topic_type" type="str" value="PoseStamped" />
+        <param name="output"     type="str" value="$(arg output)" />
+    </node>
+
+
+    <!-- play the dataset -->
+    <node pkg="rosbag" type="play" name="rosbag" args="-r 4 $(arg bag)" required="true"/>
+
+
+</launch>

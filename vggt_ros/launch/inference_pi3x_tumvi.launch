@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2025-2026 Yuantai-Z -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<launch>
+  <arg name="python_executable" default="$(optenv VGGT_ROS_PYTHON python3)" />
+  <arg name="camera_topic" default="/ov_msckf/camera_raw/cam0" />
+  <arg name="model_name" default="" />
+  <arg name="model_source_path" default="" />
+  <arg name="model_revision" default="" />
+  <arg name="confidence_activation" default="" />
+
+  <include file="$(find vggt_ros)/launch/inference.launch">
+    <arg name="model" value="pi3x" />
+    <arg name="config_file" value="$(find vggt_ros)/config/pi3x.yaml" />
+    <arg name="camera_profile_file" value="$(find vggt_ros)/config/pi3x_tumvi.yaml" />
+    <arg name="python_executable" value="$(arg python_executable)" />
+    <arg name="camera_topic" value="$(arg camera_topic)" />
+    <arg name="model_name" value="$(arg model_name)" />
+    <arg name="model_source_path" value="$(arg model_source_path)" />
+    <arg name="model_revision" value="$(arg model_revision)" />
+    <arg name="confidence_activation" value="$(arg confidence_activation)" />
+  </include>
+</launch>

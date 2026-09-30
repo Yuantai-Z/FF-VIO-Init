@@ -1,0 +1,37 @@
+cmake-build-*
+/build/
+/Build/
+*.*~
+.idea
+doxgen_generated
+*.swp
+*.swo
+doc
+.vscode
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+
+# Runtime and experiment artifacts
+/output/
+/logs/
+/devel/
+*.ans
+*.bag
+*.log
+*.ply
+
+# External model source trees and caches are not release content
+/external_models/
+/model_cache/
+/.huggingface/
+/vggt/
+/Pi3/
+
+# Model checkpoints belong in external model repositories or caches
+*.ckpt
+*.pth
+*.pt
+*.safetensors

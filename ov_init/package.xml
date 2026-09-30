@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<package format="3">
+
+    <!-- Package Information -->
+    <name>ov_init</name>
+    <version>1.0.0</version>
+    <description>
+        OpenVINS initialization with VGGT point-cloud constraints for ROS 1.
+    </description>
+    <url type="website">https://github.com/Yuantai-Z/FF-VIO-Init</url>
+    <url type="bugtracker">https://github.com/Yuantai-Z/FF-VIO-Init/issues</url>
+    <url type="repository">https://github.com/Yuantai-Z/FF-VIO-Init</url>
+
+    <!-- Code Authors -->
+    <author email="pgeneva@udel.edu">Patrick Geneva</author>
+    <author email="keck@udel.edu">Kevin Eckenhoff</author>
+    <author email="ghuang@udel.edu">Guoquan Huang</author>
+    <author email="tai0515nice@163.com">Yuantai-Z</author>
+    <maintainer email="tai0515nice@163.com">Yuantai-Z</maintainer>
+
+    <!-- Licensing -->
+    <license>GNU General Public License v3.0</license>
+
+    <!-- ROS 1 dependencies -->
+    <buildtool_depend>catkin</buildtool_depend>
+    <depend>roscpp</depend>
+    <depend>sensor_msgs</depend>
+    <depend>std_msgs</depend>
+    <depend>ov_core</depend>
+
+    <!-- System dependencies for both versions -->
+    <depend>eigen</depend>
+    <depend>libopencv-dev</depend>
+    <depend>libopencv-contrib-dev</depend>
+    <depend>boost</depend>
+    <depend>libceres-dev</depend>
+
+    <!-- Note the export is required to expose the executables -->
+    <export>
+        <build_type>catkin</build_type>
+    </export>
+
+</package>

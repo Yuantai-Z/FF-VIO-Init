@@ -1,0 +1,32 @@
+# Copyright (C) 2025-2026 Yuantai-Z
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+model_type: pi3x
+model_name: yyfz233/Pi3X
+# Immutable Hugging Face weights revision used by the released experiments.
+model_revision: bb1deea4d7423de5b30691739cb451a3f57dc1d5
+# Optional external source root containing pi3/. PI3X_SOURCE_PATH is also accepted.
+model_source_path: ""
+device: cuda
+amp_dtype: auto
+
+# legacy_exp publishes 1 + exp(clipped_logit), matching the existing experiments.
+# sigmoid publishes values in [0, 1]. The companion never applies a threshold;
+# configure the estimator threshold in the same confidence domain you select here.
+confidence_activation: legacy_exp
+
+# Prefer inference_pi3x_euroc.launch or inference_pi3x_tumvi.launch, which
+# overlays a named K + processed-size profile. For another camera, provide the
+# same fields in a custom overlay. The companion neither rescales K nor changes
+# the image grid.
+
+# Processed OpenVINS cam0 input; request/pointcloud are the fixed protocol topics.
+camera_topic: /ov_msckf/camera_raw/cam0
+request_topic: /vggtinitializer/request_timestamps
+pointcloud_topic: /vggtinitializer/pointcloud
+
+buffer_size: 500
+timestamp_tolerance: 0.000001
+request_wait_timeout: 5.0 # waits for requested images; model wait is configured in the estimator YAML
+subscriber_queue_size: 1000
+publisher_queue_size: 20
